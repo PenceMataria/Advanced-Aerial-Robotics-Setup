@@ -37,4 +37,30 @@ This repository contains how to setup Ubuntu for basic Aerial Robotics .</br>
      #dependencies for building packages
      sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential
 If you found any problem in installation then visit :-http://wiki.ros.org/kinetic/Installation/Ubuntu     
-### For making your linux more attractive :- ZSH+POWERLEVEL9k, GNOME . . . . . . . . . 
+#### For making your linux more attractive :- ZSH+POWERLEVEL9k, GNOME . . . . . . . . . 
+#### 6 Basic setup for px4
+###### (i) Install QGC :- for compressed archive : https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.tar.bz2
+     #Extract the archive using the terminal command:
+     tar jxf QGroundControl.tar.bz2
+     cd qgroundcontrol
+     ./qgroundcontrol-start.sh
+###### for AppImage
+     chmod +x ./QGroundControl.AppImage
+    ./QGroundControl.AppImage  (or double click)
+###### (ii) Toolchain installation :- https://dev.px4.io/en/setup/dev_env_linux_ubuntu.html
+###### (iii) Building the code of px4 :-
+     #making local source
+     mkdir -p ~/src
+     cd ~/src
+     git clone https://github.com/PX4/Firmware.git
+     cd Firmware
+     #building
+     make px4fmu-v2_default
+     #upload to board
+     make px4fmu-v2_default upload
+###### for more details :- https://dev.px4.io/en/setup/building_px4.html     
+#### 7 Installing mavros :-
+    #The mavros ros package enables MAVLink extendable communication between computers running ROS, MAVLink enabled autopilots, and MAVLink enabled GCS
+    sudo apt-get install ros-kinetic-mavros
+    sudo apt-get install ros-kinetic-mavros-extras
+###### for more details :- https://dev.px4.io/en/robotics/    
