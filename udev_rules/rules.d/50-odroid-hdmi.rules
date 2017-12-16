@@ -1,0 +1,1 @@
+KERNEL=="fb1", SYMLINK+="fb6"

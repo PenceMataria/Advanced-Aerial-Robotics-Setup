@@ -1,0 +1,2 @@
+KERNEL=="ttySAC0", SYMLINK+="ttyACM99"
+
